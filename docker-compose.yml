@@ -2,7 +2,7 @@ version: '2.2'
 services:
 
   fluent-bit:
-    image: fluent/fluent-bit:1.5
+    image: fluent/fluent-bit:3.0
     volumes:
       - ./fluent-bit/conf:/fluent-bit/etc
     links:
@@ -11,6 +11,7 @@ services:
       - 24224:24224
       - 5140:5140/udp
       - 2020:2020
+      - 2021:2021
     logging:
         driver: "json-file"
         options:
